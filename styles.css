@@ -1,0 +1,131 @@
+:root{
+  --bg: #111;            /* primer fondo */
+  --card: #fff;          /* fondo del post */
+  --text: #111;          /* texto principal */
+  --muted: #6b6b6b;      /* texto secundario */
+  --border: #e6e6e6;     /* bordes suaves */
+}
+
+/* Fondo y centrado de la tarjeta */
+body {
+  margin: 0;
+  font-family: "Roboto", system-ui, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+.app {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+/* Tarjeta del post */
+.post {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  background: var(--card);
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 24px rgba(0,0,0,.25);
+}
+
+/* ========== HEADER ========== */
+.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  font-size: 28px;
+}
+
+.user-texts {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  font-size: 14px;
+}
+
+.user-texts > span {
+  color: var(--muted);
+}
+
+/* Botón de icono genérico */
+.icon-btn {
+  border: 0;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+  color: inherit;
+  display: inline-grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* ========== IMAGEN ========== */
+.post-img img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* ========== ICONOS ========== */
+.post-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.post-icons .left {
+  display: flex;
+  gap: 6px;
+}
+
+/* ========== LIKES + CUERPO ========== */
+.post-likes {
+  margin: 10px 12px 0 12px;
+  font-size: 14px;
+}
+
+.post-body {
+  padding: 8px 12px 16px 12px;
+  font-size: 14px;
+  color: #222;
+  line-height: 1.35;
+}
+
+/* ====== MEDIA ====== */
+
+/* Pantallas angostas: que el ancho no se pase del viewport */
+@media (max-width: 420px){
+  .post { width: 100%; }
+}
+
+/* Teléfonos muy pequeños */
+@media (max-width: 340px){
+  .post-icons { padding: 8px 10px; }
+  .post-likes, .post-body { font-size: 12px; }
+}
+
+/* Alturas muy bajas */
+@media (max-height: 520px){
+  .app { padding: 12px; }
+}
